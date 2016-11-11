@@ -1,0 +1,30 @@
+'Webandco.Wireframe:Box':
+  superTypes:
+    'TYPO3.Neos:Content': TRUE
+  ui:
+    label: 'Wireframe Box'
+    icon: 'icon-picture'
+    inlineEditable: TRUE
+    group: 'wireframe'
+    inspector:
+      groups:
+        wireframe:
+          label: 'Wireframe'
+          position: 20
+  properties:
+    label:
+      type: string
+      defaultValue: 'Wireframebox'
+      ui:
+        label: 'Label'
+        reloadIfChanged: true
+        inspector:
+          group: wireframe
+    height:
+      type: string
+      defaultValue: '100'
+      ui:
+        label: 'Height'
+        reloadIfChanged: true
+        inspector:
+          group: wireframe

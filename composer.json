@@ -1,0 +1,19 @@
+{
+    "description": "",
+    "type": "neos-package",
+    "name": "webandco/wireframe",
+    "require": {
+        "typo3/flow": "*",
+        "webandco/bootstrap": "*"
+    },
+    "autoload": {
+        "psr-0": {
+            "Webandco\\Wireframe": "Classes/"
+        }
+    },
+    "extra": {
+        "neos": {
+            "package-key": "Webandco.Wireframe"
+        }
+    }
+}

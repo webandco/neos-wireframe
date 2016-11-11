@@ -1,0 +1,8 @@
+prototype(Webandco.Base:DocumentDefault) {
+    head {
+        stylesheets.wireframe = TYPO3.TypoScript:Template {
+			templatePath = 'resource://Webandco.Wireframe/Private/Templates/Page/Default.html'
+			sectionName = 'stylesheets'
+		}
+	}
+}
