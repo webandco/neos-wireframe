@@ -1,7 +1,7 @@
 {
-    "description": "",
-    "type": "neos-package",
-    "name": "webandco/wireframe",
+    "description": "web&co neos wireframe package",
+    "type": "typo3-flow-package",
+    "name": "webandco/neos-wireframe",
     "require": {
         "typo3/flow": "*",
         "webandco/bootstrap": "*"
