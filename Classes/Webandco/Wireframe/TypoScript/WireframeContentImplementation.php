@@ -5,6 +5,7 @@ use TYPO3\Flow\Annotations as Flow;
 use TYPO3\Neos\Domain\Model\UserInterfaceMode;
 use TYPO3\TypoScript\TypoScriptObjects\AbstractTypoScriptObject;
 use TYPO3\Neos\Domain\Service\UserInterfaceModeService;
+use TYPO3\Flow\Http\Request;
 
 class WireframeContentImplementation extends AbstractTypoScriptObject {
 
@@ -28,12 +29,15 @@ class WireframeContentImplementation extends AbstractTypoScriptObject {
      */
     public function evaluate()
     {
+
+        $httpRequest = Request::createFromEnvironment();
+
         /** @var UserInterfaceMode $mode */
         $mode = $this->interfaceRenderModeService->findModeByCurrentUser();
 
         /** @var boolean $isWireframeMode */
         $isWireframeMode = $mode->getName() === 'wireframe';
 
-        return  $isWireframeMode;
+        return  ($httpRequest->getArgument('wireframeMode') == '1') ? true : $isWireframeMode;
     }
 }

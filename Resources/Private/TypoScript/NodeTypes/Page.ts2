@@ -18,6 +18,8 @@ prototype(TYPO3.Neos:Page) {
 				maximumLevels = 5
 				site = ${site}
             }
+
+			mode = ${request.arguments.wireframeMode == '1' ? '0' : '1'}
         }
 	}
 

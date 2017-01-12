@@ -1,3 +1,7 @@
 include: NodeTypes/*
 
+prototype(TYPO3.TypoScript:GlobalCacheIdentifiers) {
+    wireframeMode = ${'wireframeMode_' + request.arguments.wireframeMode}
+}
+
 wireframe < page
