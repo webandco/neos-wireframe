@@ -6,6 +6,21 @@ prototype(TYPO3.Neos:Page) {
 		}
 	}
 
+	toolBox = TYPO3.TypoScript:Template {
+		@position = 'before body'
+		templatePath = 'resource://Webandco.Wireframe/Private/Templates/Page/Default.html'
+		sectionName = 'toolBox'
+
+		parts {
+            menu = TYPO3.Neos:Menu {
+				entryLevel = 1
+				templatePath = 'resource://Webandco.Wireframe/Private/Templates/TypoScriptObjects/Menu.html'
+				maximumLevels = 5
+				site = ${site}
+            }
+        }
+	}
+
 	body {
 		javascripts.canvas = TYPO3.TypoScript:Template {
 			templatePath = 'resource://Webandco.Wireframe/Private/Templates/Page/Default.html'
@@ -15,6 +30,7 @@ prototype(TYPO3.Neos:Page) {
 			templatePath = 'resource://Webandco.Wireframe/Private/Templates/Page/Default.html'
 			sectionName = 'bodyScriptsWireframe'
 		}
+
 	}
 }
 

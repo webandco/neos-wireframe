@@ -82,3 +82,15 @@
     padding: 20px;
     line-height: 1.5em;
 }
+
+/**
+mmenu fixes
+ */
+.mm-panels .mm-listview>li,
+.nav.navbar-nav.mm-listview {
+    width: 100%;
+}
+
+.dropdown-menu {
+    position: initial !important;
+}

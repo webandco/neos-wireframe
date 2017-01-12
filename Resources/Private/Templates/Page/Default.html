@@ -5,15 +5,51 @@
 <head>
 	<f:section name="stylesheetsWireframe">
 		<link rel="stylesheet" href="{f:uri.resource(path: 'Styles/wireframe.css', package: 'Webandco.Wireframe')}" media="all" />
+		<link rel="stylesheet" href="{f:uri.resource(path: 'Styles/jquery.mmenu.css', package: 'Webandco.Wireframe')}" media="all" />
 	</f:section>
 </head>
 <body>
+    <f:section name="toolBox">
+        <f:if condition="{neos:rendering.inBackend()}">
+            <f:else>
+                <nav class="navbar navbar-default">
+                  <div class="container-fluid">
+
+                    <a class="navbar-brand pull-left" href="#my-menu"><img src="{f:uri.resource(path: 'Images/menu.svg', package: 'Webandco.Wireframe')}"></a>
+                    <a class="navbar-brand pull-right" href="javascript:void((function(d){if(self!=top||d.getElementById('toolbar')&amp;&amp;d.getElementById('toolbar').getAttribute('data-resizer'))return false;d.write('<!DOCTYPE HTML><html style=&quot;opacity:0;&quot;><head><meta charset=&quot;utf-8&quot;/></head><body><a data-viewport=&quot;320x480&quot; data-icon=&quot;mobile&quot;>Mobile (e.g. Apple iPhone)</a><a data-viewport=&quot;320x568&quot; data-icon=&quot;mobile&quot; data-version=&quot;5&quot;>Apple iPhone 5</a><a data-viewport=&quot;375×667&quot; data-icon=&quot;mobile&quot; data-version=&quot;7&quot;>Apple iPhone 7</a><a data-viewport=&quot;414×736&quot; data-icon=&quot;mobile&quot; data-version=&quot;7+&quot;>Apple iPhone 7 Plus</a><a data-viewport=&quot;600x800&quot; data-icon=&quot;small-tablet&quot;>Small Tablet</a><a data-viewport=&quot;768x1024&quot; data-icon=&quot;tablet&quot;>Tablet (e.g. Apple iPad 2-3rd, mini)</a><a data-viewport=&quot;1280x800&quot; data-icon=&quot;notebook&quot;>Widescreen</a><a data-viewport=&quot;1920×1080&quot; data-icon=&quot;tv&quot;>HDTV 1080p</a><script src=&quot;https://lab.maltewassermann.com/viewport-resizer/resizer.min.js&quot;></script></body></html>')})(document));" data-text="Click or bookmark">
+                        <img src="{f:uri.resource(path: 'Images/screen.svg', package: 'Webandco.Wireframe')}">
+                    </a>
+                    <div class="clearfix"></div>
+                    <nav id="my-menu">
+                        {parts.menu -> f:format.raw()}
+                    </nav>
+                  </div>
+                </nav>
+                </f:else>
+        </f:if>
+	</f:section>
 	<f:section name="bodyWireframeCanvas">
 		<canvas id="wireframeCanvas" width="200" height="600" style="display: none;">
 		  Your browser does not support the canvas element.
 		</canvas>
 	</f:section>
 	<f:section name="bodyScriptsWireframe">
+        <f:if condition="{neos:rendering.inBackend()}">
+            <f:else>
+                <script src="{f:uri.resource(path: 'Javascripts/jquery.mmenu.min.js', package: 'Webandco.Wireframe')}"></script>
+                <script type="application/javascript">
+                    $( document ).ready(function() {
+                        $("#my-menu").mmenu({
+				            // options
+                        }, {
+                            classNames: {
+                                selected: "active"
+                             }
+                        });
+                    });
+                </script>
+            </f:else>
+        </f:if>
 		<script type="application/javascript">
 			$(function () {
 			  $('[data-toggle="tooltip"]').tooltip()
