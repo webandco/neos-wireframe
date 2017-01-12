@@ -1,5 +1,13 @@
 TYPO3:
   Neos:
+    userInterface:
+      editPreviewModes:
+        wireframe:
+          isEditingMode: TRUE
+          isPreviewMode: FALSE
+          typoScriptRenderingPath: 'wireframe'
+          title: 'Wireframe'
+          position: 'end'
     typoScript:
       autoInclude:
         'Webandco.Wireframe': TRUE
