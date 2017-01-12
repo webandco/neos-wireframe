@@ -4,7 +4,8 @@
     "name": "webandco/neos-wireframe",
     "require": {
         "typo3/flow": "*",
-        "webandco/bootstrap": "*"
+        "webandco/bootstrap": "*",
+        "webandco/neos-page": "*"
     },
     "autoload": {
         "psr-0": {
