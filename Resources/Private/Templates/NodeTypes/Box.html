@@ -1,5 +1,30 @@
+{namespace ts=TYPO3\TypoScript\ViewHelpers}
 <div class="col-xs-12">
-    <div class="wireframe h80" style="height: {height}px;">
-        <div class="name"><span>{label}</span></div>
-    </div>
+    <f:if condition="{renderBox}">
+        <div class="wireframe h80" data-color="#999999" data-bg="#fcfcff" style="height: {height}px; margin-bottom: {marginBottom}px;">
+            <div class="wrapper">
+                <div class="content">
+    </f:if>
+    <f:if condition="{elements}">
+        <f:then>
+            <ts:render path="elements" />
+        </f:then>
+        <f:else>
+            <h1>{label}</h1>
+            {description -> f:format.nl2br()}
+            <div class="box-buttons">
+                <f:if condition="{note}">
+                    <button type="button" class="btn btn-default" data-toggle="tooltip" data-html="true" data-placement="left" title="{note -> f:format.nl2br()}">Note</button>
+                </f:if>
+                <f:if condition="{semantic}">
+                    <button type="button" class="btn btn-default" data-toggle="tooltip" data-html="true" data-placement="right" title="{semantic -> f:format.nl2br()}">Semantic</button>
+                </f:if>
+            </div>
+        </f:else>
+    </f:if>
+    <f:if condition="{renderBox}">
+                </div>
+            </div>
+        </div>
+    </f:if>
 </div>

@@ -1,10 +1,18 @@
+/*.neos-not-inline-editable > .neos-empty-contentcollection-overlay {*/
+    /*display: none;*/
+/*}*/
+
 .wireframe {
-    background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgaWQ9IkViZW5lXzEiIHg9IjBweCIgeT0iMHB4IiB2aWV3Qm94PSIwIDAgMjAwIDIwMCIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZW5hYmxlLWJhY2tncm91bmQ9Im5ldyAwIDAgMjAwIDIwMCIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+DQo8c3R5bGU+DQogICAgPCFbQ0RBVEFbDQogICAgLnN0MHtmaWxsOm5vbmU7c3Ryb2tlOiM5OTk7c3Ryb2tlLW1pdGVybGltaXQ6MTA7IHN0cm9rZS13aWR0aDoxfQ0KXV0+DQo8L3N0eWxlPg0KICAgIDxnPg0KICAgICAgPGxpbmUgeDE9IjAiIHkxPSIwIiB4Mj0iMCIgeTI9IjIwMC41IiBjbGFzcz0ic3QwIiAvPg0KICAgICAgPGxpbmUgeDE9IjAuNSIgeTE9IjAuNSIgeDI9IjIwMC41IiB5Mj0iMC41IiBjbGFzcz0ic3QwIiAvPg0KICAgICAgPGxpbmUgeDE9IjIwMCIgeTE9IjAuNSIgeDI9IjIwMCIgeTI9IjIwMCIgY2xhc3M9InN0MCIgLz4NCiAgICAgIDxsaW5lIHgxPSIxOTkuNSIgeTE9IjE5OS41IiB4Mj0iMC41IiB5Mj0iMTk5LjUiIGNsYXNzPSJzdDAiIC8+DQogICAgICA8bGluZSB4MT0iMCIgeTE9IjAiIHgyPSIxOTkuNSIgeTI9IjE5OC41IiBjbGFzcz0ic3QwIiAvPg0KDQogICAgICA8bGluZSB4MT0iMjAwLjUiIHkxPSIwLjUiIHgyPSIwLjUiIHkyPSIxOTguNSIgY2xhc3M9InN0MCIgLz4NCg0KICA8L2c+DQo8L3N2Zz4=");
     width: 100%;
     height: 100%;
     display: table;
-    margin-bottom: 20px;
+
+    background-size: 100% 100%;
+    background-repeat:no-repeat;
+    background-position:center center;
+    margin-bottom: 1px;
 }
+
 
 .h40
 {
@@ -36,17 +44,41 @@
      height: 600px;
 }
 
-.name {
+.wrapper {
     display: table-cell;
 
     text-align: center;
     vertical-align: middle;
 }
-.name span {
+.wrapper .content {
     background-color: #fff;
     color: #999;
-    font-weight: bold;
     padding: 5px;
     font-family: Verdana;
-    font-size: 18px;
+    font-size: 1em;
+    font-weight: normal;
+    margin: 10px;
+}
+
+.wrapper .content h1 {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.colored .wrapper .content {
+    background-color: #ecebeb;
+}
+
+.box-buttons {
+    margin-top: 20px;
+}
+
+.tooltip .tooltip-inner {
+    max-width: 350px;
+    width: 350px;
+    font-size: 1.2em;
+    background-color: #4a4a4a;
+    text-align: left !important;
+    padding: 20px;
+    line-height: 1.5em;
 }

@@ -3,11 +3,91 @@
 {namespace ts=TYPO3\TypoScript\ViewHelpers}
 <html>
 <head>
-	<f:section name="stylesheets">
+	<f:section name="stylesheetsWireframe">
 		<link rel="stylesheet" href="{f:uri.resource(path: 'Styles/wireframe.css', package: 'Webandco.Wireframe')}" media="all" />
 	</f:section>
 </head>
 <body>
+	<f:section name="bodyWireframeCanvas">
+		<canvas id="wireframeCanvas" width="200" height="600" style="display: none;">
+		  Your browser does not support the canvas element.
+		</canvas>
+	</f:section>
+	<f:section name="bodyScriptsWireframe">
+		<script type="application/javascript">
+			$(function () {
+			  $('[data-toggle="tooltip"]').tooltip()
+			})
 
+            $( document ).ready(function() {
+			    function updateCanvas(box) {
+                    c=document.getElementById("wireframeCanvas");
+                    ctx=c.getContext("2d");
+
+                    var box = $(box);
+                    console.log(box);
+                    console.log(box.data('color'));
+
+                    height = box.height();
+                    width  = box.width();
+
+                    c.height = height;
+                    c.width = width;
+
+                    // ctx.fillStyle = "#ffffff";
+                    ctx.fillStyle = box.data('bg');
+
+                    ctx.fillRect(0,0,c.width, c.height);
+                    // ctx.strokeStyle="#09f";
+                    ctx.strokeStyle = box.data('color');
+                    ctx.moveTo(0,0);
+                    ctx.lineTo(width, 0);
+                    ctx.lineTo(width, height);
+                    ctx.lineTo(0, height);
+                    ctx.lineTo(0, 0);
+
+                    // 2px line
+                    ctx.moveTo(1,1);
+                    ctx.lineTo(width-1, 1);
+                    ctx.lineTo(width-1, height-1);
+                    ctx.lineTo(1, height-1);
+                    ctx.lineTo(1, 1);
+                    ctx.stroke();
+                    /*
+                    */
+
+                    ctx.moveTo(0,height);
+                    ctx.lineTo(width,0);
+                    ctx.stroke();
+                    ctx.moveTo(0,0);
+                    ctx.lineTo(width,height);
+                    ctx.stroke();
+
+                    box.css({'background-image':"url(" + c.toDataURL("image/png")+ ")" });
+                    box.find('.content').css({'background-color': box.data('bg')})
+                }
+
+                $( window ).resize(function() {
+                    resize();
+                });
+
+			    resize();
+
+			    function resize() {
+					$('.wireframe').each(function(i, o) {
+						  updateCanvas(o);
+					});
+				}
+
+				if (typeof document.addEventListener === 'function') {
+					  document.addEventListener('Neos.PageLoaded', function(event) {
+							  resize();
+					  }, false);
+				}
+            });
+
+
+		</script>
+	</f:section>
 </body>
 </html>

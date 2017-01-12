@@ -1,0 +1,12 @@
+prototype(Webandco.Wireframe:Box) < prototype(TYPO3.Neos:Content) {
+	@context.box = ${node}
+	isWireframeRenderMode = Webandco.Wireframe:WireframeContent
+	renderBox = ${this.isWireframeRenderMode  || node.properties.renderBox == null || node.properties.renderBox == true}
+
+	elements = TYPO3.Neos:ContentCollection {
+		isWireframeRenderMode = Webandco.Wireframe:WireframeContent
+		children = ${q(box).children('elements').first().get(0)}
+		nodePath = 'elements'
+		@if.renderElements = ${!this.isWireframeRenderMode && Array.length(q(box).children('elements').first().children().get()) > 0}
+	}
+}

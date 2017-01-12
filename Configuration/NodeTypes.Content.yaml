@@ -1,6 +1,7 @@
 'Webandco.Wireframe:Box':
   superTypes:
     'TYPO3.Neos:Content': TRUE
+    'Webandco.Wireframe:BoxMixin': TRUE
   ui:
     label: 'Wireframe Box'
     icon: 'icon-picture'
@@ -19,7 +20,7 @@
         label: 'Label'
         reloadIfChanged: true
         inspector:
-          group: wireframe
+          group: 'wireframe'
     height:
       type: string
       defaultValue: '100'
@@ -27,4 +28,61 @@
         label: 'Height'
         reloadIfChanged: true
         inspector:
-          group: wireframe
+          group: 'wireframe'
+    description:
+      type: 'string'
+      ui:
+        label: 'Description'
+        reloadIfChanged: true
+        inspector:
+          group: 'wireframe'
+          editor: 'TYPO3.Neos/Inspector/Editors/TextAreaEditor'
+          editorOptions:
+            rows: 7
+    semantic:
+      type: 'string'
+      ui:
+        label: 'Semantic'
+        reloadIfChanged: true
+        inspector:
+          group: 'wireframe'
+          editor: 'TYPO3.Neos/Inspector/Editors/TextAreaEditor'
+          editorOptions:
+            rows: 7
+    note:
+      type: 'string'
+      ui:
+        label: 'Note'
+        reloadIfChanged: true
+        inspector:
+          group: 'wireframe'
+          editor: 'TYPO3.Neos/Inspector/Editors/TextAreaEditor'
+          editorOptions:
+            rows: 7
+    marginBottom:
+      type: string
+      ui:
+        label: 'Margin Bottom'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'wireframe'
+    renderBox:
+      type: boolean
+      defaultValue: true
+      ui:
+        label: 'Render box'
+        reloadIfChanged: true
+        inspector:
+          group: 'wireframe'
+
+  childNodes:
+    elements:
+      type: 'Webandco.Wireframe:ContentCollection'
+      constraints:
+        nodeTypes:
+          '*': true
+
+'Webandco.Wireframe:ContentCollection':
+  label: "${'Elements'}"
+  superTypes:
+    'TYPO3.Neos:ContentCollection': true

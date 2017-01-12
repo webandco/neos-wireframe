@@ -1,0 +1,18 @@
+'Webandco.Wireframe:BoxMixin':
+  properties:
+    label:
+      type: string
+      defaultValue: 'Wireframebox'
+      ui:
+        label: 'Label'
+        reloadIfChanged: true
+        inspector:
+          group: wireframe
+    height:
+      type: string
+      defaultValue: '100'
+      ui:
+        label: 'Height'
+        reloadIfChanged: true
+        inspector:
+          group: wireframe

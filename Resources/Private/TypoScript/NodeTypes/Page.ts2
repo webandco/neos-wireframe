@@ -1,0 +1,23 @@
+prototype(TYPO3.Neos:Page) {
+    head {
+        stylesheets.wireframe = TYPO3.TypoScript:Template {
+			templatePath = 'resource://Webandco.Wireframe/Private/Templates/Page/Default.html'
+			sectionName = 'stylesheetsWireframe'
+		}
+	}
+
+	body {
+		javascripts.canvas = TYPO3.TypoScript:Template {
+			templatePath = 'resource://Webandco.Wireframe/Private/Templates/Page/Default.html'
+			sectionName = 'bodyWireframeCanvas'
+		}
+		javascripts.wireframe = TYPO3.TypoScript:Template {
+			templatePath = 'resource://Webandco.Wireframe/Private/Templates/Page/Default.html'
+			sectionName = 'bodyScriptsWireframe'
+		}
+	}
+}
+
+prototype(Webandco.Wireframe.Page) < prototype(TYPO3.Neos:Page) {
+
+}
