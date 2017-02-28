@@ -13,18 +13,32 @@
         <f:else>
             <h1>{label}</h1>
             {description -> f:format.nl2br()}
-            <div class="box-buttons">
-                <f:if condition="{note}">
-                    <button type="button" class="btn btn-default" data-toggle="tooltip" data-html="true" data-placement="left" title="{note -> f:format.nl2br()}">Note</button>
-                </f:if>
-                <f:if condition="{semantic}">
-                    <button type="button" class="btn btn-default" data-toggle="tooltip" data-html="true" data-placement="right" title="{semantic -> f:format.nl2br()}">Semantic</button>
-                </f:if>
-            </div>
+            <f:if condition="{renderMode} != 2">
+                <div class="box-buttons">
+                    <f:if condition="{note}">
+                        <button type="button" class="btn btn-default" data-toggle="tooltip" data-html="true" data-placement="left" title="{note -> f:format.nl2br()}">Note</button>
+                    </f:if>
+                    <f:if condition="{semantic}">
+                        <button type="button" class="btn btn-default" data-toggle="tooltip" data-html="true" data-placement="right" title="{semantic -> f:format.nl2br()}">Semantic</button>
+                    </f:if>
+                </div>
+            </f:if>
         </f:else>
     </f:if>
     <f:if condition="{wir:renderBox(mode: renderMode, node: node)}">
                 </div>
+            </div>
+        </div>
+    </f:if>
+    <f:if condition="{renderMode} == 2">
+        <div class="meta-data">
+            <div class="col-xs-6">
+                <h4>Nodes</h4>
+                <p>{note -> f:format.nl2br()}</p>
+            </div>
+            <div class="col-xs-6">
+                <h4>Semantic</h4>
+                <p>{semantic -> f:format.nl2br()}</p>
             </div>
         </div>
     </f:if>

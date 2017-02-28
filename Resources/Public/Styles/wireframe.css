@@ -98,3 +98,16 @@ mmenu fixes
 .dropdown-menu {
     position: initial !important;
 }
+
+.meta-data {
+    text-align: left !important;
+    background-color: #e3e3e6;
+    padding: 10px;
+    display: table;
+    background-size: 100% 100%;
+    width: 100%;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #999999;
+    border-left: 2px solid #999999;
+    border-right: 2px solid #999999;
+}
