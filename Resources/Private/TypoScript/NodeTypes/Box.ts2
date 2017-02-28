@@ -1,12 +1,13 @@
 prototype(Webandco.Wireframe:Box) < prototype(TYPO3.Neos:Content) {
 	@context.box = ${node}
-	isWireframeRenderMode = Webandco.Wireframe:WireframeContent
-	renderBox = ${this.isWireframeRenderMode  || node.properties.renderBox == null || node.properties.renderBox == true}
+	test = ${node.properties.status}
+	color = ${node.properties.status == null ? '#999999' : node.properties.status}
+	renderMode = Webandco.Wireframe:WireframeContent
 
 	elements = TYPO3.Neos:ContentCollection {
-		isWireframeRenderMode = Webandco.Wireframe:WireframeContent
+		renderMode = Webandco.Wireframe:WireframeContent
 		children = ${q(box).children('elements').first().get(0)}
 		nodePath = 'elements'
-		@if.renderElements = ${!this.isWireframeRenderMode && Array.length(q(box).children('elements').first().children().get()) > 0}
+		@if.renderElements = ${this.renderMode == 0 && Array.length(q(box).children('elements').first().children().get()) > 0}
 	}
 }

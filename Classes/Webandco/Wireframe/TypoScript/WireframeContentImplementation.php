@@ -25,7 +25,7 @@ class WireframeContentImplementation extends AbstractTypoScriptObject {
     /**
      * Evaluate this TypoScript object and return the result
      *
-     * @return boolean
+     * @return integer
      */
     public function evaluate()
     {
@@ -35,9 +35,18 @@ class WireframeContentImplementation extends AbstractTypoScriptObject {
         /** @var UserInterfaceMode $mode */
         $mode = $this->interfaceRenderModeService->findModeByCurrentUser();
 
-        /** @var boolean $isWireframeMode */
-        $isWireframeMode = $mode->getName() === 'wireframe';
+        /** @var integer $renderMode */
+        $renderMode = 0;
 
-        return  ($httpRequest->getArgument('wireframeMode') == '1') ? true : $isWireframeMode;
+        switch (true) {
+            case $mode->getName() === 'wireframe' || $httpRequest->getArgument('wireframeMode') == '1' :
+                $renderMode = 1;
+                break;
+            case $httpRequest->getArgument('wireframeMode') == '2' :
+                $renderMode = 2;
+                break;
+        }
+
+        return $renderMode;
     }
 }
