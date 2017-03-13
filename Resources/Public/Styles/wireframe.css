@@ -83,6 +83,11 @@
     line-height: 1.5em;
 }
 
+.toolbox-spacer {
+    height: 65px;
+    width: 100%;
+}
+
 .img-responsive {
     width: 100%;
 }
