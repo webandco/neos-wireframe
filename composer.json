@@ -1,15 +1,14 @@
 {
-    "description": "web&co neos wireframe package",
-    "type": "typo3-flow-package",
+    "description": "",
+    "type": "neos-package",
     "name": "webandco/neos-wireframe",
     "require": {
-        "typo3/flow": "*",
-        "webandco/bootstrap": "*",
-        "webandco/neos-page": "*"
+        "neos/neos": "^3.0",
+        "webandco/neos-bootstrap": "*"
     },
     "autoload": {
-        "psr-0": {
-            "Webandco\\Wireframe": "Classes/"
+        "psr-4": {
+            "Webandco\\Wireframe\\": "Classes"
         }
     },
     "extra": {
