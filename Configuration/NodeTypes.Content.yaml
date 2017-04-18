@@ -1,6 +1,6 @@
 'Webandco.Wireframe:Box':
   superTypes:
-    'TYPO3.Neos:Content': TRUE
+    'Neos.Neos:Content': TRUE
     'Webandco.Wireframe:BoxMixin': TRUE
   ui:
     label: 'Wireframe Box'
@@ -36,17 +36,7 @@
         reloadIfChanged: true
         inspector:
           group: 'wireframe'
-          editor: 'TYPO3.Neos/Inspector/Editors/TextAreaEditor'
-          editorOptions:
-            rows: 7
-    semantic:
-      type: 'string'
-      ui:
-        label: 'Semantic'
-        reloadIfChanged: true
-        inspector:
-          group: 'wireframe'
-          editor: 'TYPO3.Neos/Inspector/Editors/TextAreaEditor'
+          editor: 'Neos.Neos/Inspector/Editors/TextAreaEditor'
           editorOptions:
             rows: 7
     note:
@@ -56,7 +46,7 @@
         reloadIfChanged: true
         inspector:
           group: 'wireframe'
-          editor: 'TYPO3.Neos/Inspector/Editors/TextAreaEditor'
+          editor: 'Neos.Neos/Inspector/Editors/TextAreaEditor'
           editorOptions:
             rows: 7
     marginBottom:
@@ -74,7 +64,6 @@
         reloadIfChanged: true
         inspector:
           group: 'wireframe'
-
   childNodes:
     elements:
       type: 'Webandco.Wireframe:ContentCollection'
@@ -85,4 +74,4 @@
 'Webandco.Wireframe:ContentCollection':
   label: "${'Elements'}"
   superTypes:
-    'TYPO3.Neos:ContentCollection': true
+    'Neos.Neos:ContentCollection': true

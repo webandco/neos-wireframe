@@ -1,10 +1,10 @@
-prototype(Webandco.Wireframe:Box) < prototype(TYPO3.Neos:Content) {
+prototype(Webandco.Wireframe:Box) < prototype(Neos.Neos:Content) {
 	@context.box = ${node}
 	test = ${node.properties.status}
 	color = ${node.properties.status == null ? '#999999' : node.properties.status}
 	renderMode = Webandco.Wireframe:WireframeContent
 
-	elements = TYPO3.Neos:ContentCollection {
+	elements = Neos.Neos:ContentCollection {
 		renderMode = Webandco.Wireframe:WireframeContent
 		children = ${q(box).children('elements').first().get(0)}
 		nodePath = 'elements'

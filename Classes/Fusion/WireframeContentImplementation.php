@@ -1,16 +1,16 @@
 <?php
-namespace Webandco\Wireframe\TypoScript;
+namespace Webandco\Wireframe\Fusion;
 
-use TYPO3\Flow\Annotations as Flow;
-use TYPO3\Neos\Domain\Model\UserInterfaceMode;
-use TYPO3\TypoScript\TypoScriptObjects\AbstractTypoScriptObject;
-use TYPO3\Neos\Domain\Service\UserInterfaceModeService;
-use TYPO3\Flow\Http\Request;
+use Neos\Flow\Annotations as Flow;
+use Neos\Neos\Domain\Model\UserInterfaceMode;
+use Neos\Fusion\FusionObjects\AbstractFusionObject;
+use Neos\Neos\Domain\Service\UserInterfaceModeService;
+use Neos\Flow\Http\Request;
 
-class WireframeContentImplementation extends AbstractTypoScriptObject {
+class WireframeContentImplementation extends AbstractFusionObject {
 
     /**
-     * @Flow\InjectConfiguration(path="userInterface.editPreviewModes", package="TYPO3.Neos")
+     * @Flow\InjectConfiguration(path="userInterface.editPreviewModes", package="Neos.Neos")
      * @var array
      */
     protected $editPreviewModes;
@@ -23,7 +23,7 @@ class WireframeContentImplementation extends AbstractTypoScriptObject {
     protected $interfaceRenderModeService;
 
     /**
-     * Evaluate this TypoScript object and return the result
+     * Evaluate wireframe rendering mode
      *
      * @return integer
      */

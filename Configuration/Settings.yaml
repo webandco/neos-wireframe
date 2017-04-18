@@ -1,4 +1,4 @@
-TYPO3:
+Neos:
   Neos:
     userInterface:
       editPreviewModes:
@@ -8,7 +8,7 @@ TYPO3:
           typoScriptRenderingPath: 'wireframe'
           title: 'Wireframe'
           position: 'end'
-    typoScript:
+    fusion:
       autoInclude:
         'Webandco.Wireframe': TRUE
     nodeTypes:

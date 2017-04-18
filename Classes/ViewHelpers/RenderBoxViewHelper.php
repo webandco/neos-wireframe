@@ -2,9 +2,9 @@
 
 namespace Webandco\Wireframe\ViewHelpers;
 
-use TYPO3\Flow\Annotations as Flow;
-use TYPO3\Fluid\Core\ViewHelper\AbstractViewHelper;
-use TYPO3\TYPO3CR\Domain\Model\NodeInterface;
+use Neos\Flow\Annotations as Flow;
+use Neos\FluidAdaptor\Core\ViewHelper\AbstractViewHelper;
+use Neos\ContentRepository\Domain\Model\NodeInterface;
 
 class RenderBoxViewHelper extends AbstractViewHelper {
 

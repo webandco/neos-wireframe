@@ -1,4 +1,0 @@
-prototype(Webandco.Wireframe:WireframeContent) {
-	@class = 'Webandco\\Wireframe\\TypoScript\\WireframeContentImplementation'
-	value = ${value}
-}

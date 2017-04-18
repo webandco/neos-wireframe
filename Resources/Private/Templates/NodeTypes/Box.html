@@ -1,14 +1,14 @@
-{namespace ts=TYPO3\TypoScript\ViewHelpers}
-{namespace wir=Webandco\Wireframe\ViewHelpers}
+{namespace fusion=Neos\Fusion\ViewHelpers}
+{namespace wireframe=Webandco\Wireframe\ViewHelpers}
 <div class="col-xs-12">
-    <f:if condition="{wir:renderBox(mode: renderMode, node: node)}">
+    <f:if condition="{wireframe:renderBox(mode: renderMode, node: node)}">
         <div class="wireframe h80" data-color="{color}" data-bg="#fcfcff" style="height: {height}px; margin-bottom: {marginBottom}px;">
             <div class="wrapper">
                 <div class="content">
     </f:if>
-    <f:if condition="{wir:showElements(value: elements)}">
+    <f:if condition="{wireframe:showElements(value: elements)}">
         <f:then>
-            <ts:render path="elements" />
+            <fusion:render path="elements" />
         </f:then>
         <f:else>
             <h1>{label}</h1>
@@ -25,7 +25,7 @@
             </f:if>
         </f:else>
     </f:if>
-    <f:if condition="{wir:renderBox(mode: renderMode, node: node)}">
+    <f:if condition="{wireframe:renderBox(mode: renderMode, node: node)}">
                 </div>
             </div>
         </div>
